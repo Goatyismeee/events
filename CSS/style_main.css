@@ -16,15 +16,17 @@ body {
 }
 
 a.visited {
-	property: none;	
+    text-decoration: none;
+    color: inherit;	
 }
 
 /* Nav Link Effects */
     a.navlink {
-        border-radius: 9999px;
-        padding-left: 50px;
-        padding-right: 50px;
-    }
+    text-decoration: none;
+	border-radius: 9999px;
+	padding-left: 50px;
+	padding-right: 50px;
+	}
 
     a.navlink:hover {
         color: #32CD32;
