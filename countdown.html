@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+      <title>Countdown</title>
+
+      <!-- Stylings -->
+      <link href="./CSS/style_main.css" rel="stylesheet" />
+      <link href="./CSS/style_countdown.css" rel="stylesheet" />
+
+      <!-- Tailwind CSS -->
+      <link href="./dist/output.css" rel="stylesheet">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+      <header>
+          <!-- Navigation Bar -->
+          <nav id="navbar" class="flex justify-center">
+              <a class="navlink hover-underline-animation home" href="index.html">Home</a>
+              <a class="navlink hover-underline-animation countdown" href="countdown.html">Countdown</a>
+          </nav>
+      </header>
+
+      <h1 id="h1">See you, next year!</h1>
+      <!-- Countdown Panes -->
+      <section>
+          <div id="countdown_pane">
+              <div class="until_component">
+                <div class="until_date" id="days">--</div>
+                <div class="until">Days</div>
+              </div>
+    
+              <div class="until_component">
+                <div class="until_date" id="hours">--</div>
+                <div class="until">Hrs</div>
+              </div>
+    
+              <div class="until_component">
+                <div class="until_date" id="minutes">--</div>
+                <div class="until">Mins</div>
+              </div>
+    
+              <div class="until_component">
+                <div class="until_date" id="seconds">--</div>
+                <div class="until">Secs</div>
+              </div>
+
+              <div class="until_component">
+                <div class="until_date" id="secondsLeft">--</div>
+                <div class="until">Seconds Left</div>
+              </div>
+    
+            <div class="until_event text-center fw-bold text-white"></div>
+          </div>
+      </section>
+
+      <!-- Progress bar -->
+      <div id="completionText"></div>
+    <section class="section_progress">
+      <div id="progressBar">
+        <div id="completionBar"></div>
+      </div>
+    </section>
+
+    <!-- Next Page -->
+    <section class="next_page">
+      <button id="next_button" class="text-white">
+          <a class="button_hover" href="animations.html">>></a>
+      </button>
+    </section>
+
+    <footer id="footer_link" class="text-white">
+        Find me on:
+        <ul><a class="discord" href="https://discordapp.com/users/6889#3044">Discord (6889#3044)</a> </ul>
+        <ul><a class="instagram" href="https://instagram.com/goatyismeee/">Instagram</a></ul>
+
+    </footer>
+    
+    <!-- Scripts -->
+    <!-- JS countdown script -->
+    <script src="./javascript/countdown.js"></script>
+  </body>
+</html>
+
