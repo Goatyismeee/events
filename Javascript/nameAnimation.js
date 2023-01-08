@@ -1,9 +1,10 @@
 // List of sentences
 var header = [
-    "Chuan Yang",
 	"@Goatyismeee",
-	"ERROR 403: Access to this resource is forbidden.",
-	"❗❓‼☣⚠💠🌐🛃",
+	"ゴアティスミー",
+	"羊咩咩",
+	"403: Forbidden",
+	"403: 禁断",
 ];
 
 // Current sentence being processed
