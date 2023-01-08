@@ -28,7 +28,7 @@ body {
     }
 
 a.visited {
-	color: none;	
+	color: inherit;	
 }
 
 /* Hovering Animation */
