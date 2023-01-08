@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 body {
-    background-image: url(./images/star-bg.svg); /* Sourced from: https://desktop.github.com/ */
+    background-image: url(../images/star-bg.svg); /* Sourced from: https://desktop.github.com/ */
     background-size: cover;
     background-color: #000000;
 } 
