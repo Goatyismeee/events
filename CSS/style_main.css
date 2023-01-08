@@ -27,6 +27,10 @@ body {
         background-color: #0f0f0f;
     }
 
+a.visited {
+	color: none;	
+}
+
 /* Hovering Animation */
     .hover-underline-animation {
     display: inline-block;
