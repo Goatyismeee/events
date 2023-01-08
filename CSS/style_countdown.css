@@ -1,0 +1,61 @@
+/* Nav Style */
+.countdown {
+    color: lime;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    color: white;
+    font-weight: bold !important;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Countdown stylings */
+#countdown_pane {
+    padding-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Individual components (days, hours, miutes, seconds) */
+.until_component {
+    margin: 12px;
+    padding: 16px;
+    background-color: #1c1e1c;
+    color: #fafafa;
+    font-weight: bolder;
+    border-radius: 15px;
+}
+
+.until_date {
+    display: flex;
+    justify-content: center;
+}
+
+/* Progress Bar */
+.section_progress {
+    display: flex;
+    justify-content: center;
+}
+
+#progressBar {
+    background-color: #1c1e1c;
+    border-radius: 15px;
+    width: 40%;
+}
+
+#completionBar {
+    display: flex;
+    justify-content: start  ;
+    height: 20px;
+    background-color: green;
+    border-radius: 15px;
+}
+
+#completionText {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
