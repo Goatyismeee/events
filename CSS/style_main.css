@@ -5,14 +5,18 @@
 body {
     background-image: url(../images/star-bg.svg); /* Sourced from: https://desktop.github.com/ */
     background-size: cover;
-    background-color: black;
+    background-color: #000000;
 } 
 
 #navbar {
     margin-top: 6px ;
-    color: white ;
+    color: #FFFFFF;
     font-size: x-large ;
     font-weight: bolder ;
+}
+
+a.visited {
+	property: none;	
 }
 
 /* Nav Link Effects */
@@ -23,13 +27,9 @@ body {
     }
 
     a.navlink:hover {
-        color: lime;
+        color: #32CD32;
         background-color: #0f0f0f;
     }
-
-a.visited {
-	color: inherit;	
-}
 
 /* Hovering Animation */
     .hover-underline-animation {
