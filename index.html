@@ -1,50 +1,80 @@
 <!DOCTYPE html> 
 <html lang="en">
-    <head>
-        <title>Goatyismeee</title>
+	<head>
+		<title>Goatyismeee</title>
 
-        <!-- Stylings -->
-        <link href="./CSS/style_main.css" rel="stylesheet" />
-        <link href="./CSS/style_index.css" rel="stylesheet" />
-        <link href="./CSS/style_reset.css" rel="stylesheet" />
+		<!-- Stylings -->
+		<link href="./CSS/style_main.css" rel="stylesheet" />
+		<link href="./CSS/style_index.css" rel="stylesheet" />
+		<link href="./CSS/style_reset.css" rel="stylesheet" />
+		<link href="./CSS/style_countdown.css" rel="stylesheet"/>
 
-        <!-- Tailwind CSS -->
-        <link href="./dist/output.css" rel="stylesheet">
+		<!-- Tailwind CSS -->
+		<link href="./dist/output.css" rel="stylesheet">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
 
-    <body>
-        <header>
-            <!-- Navigation Bar -->
-            <nav id="navbar" class="flex justify-center">
-                <a class="navlink hover-underline-animation home" href="index.html">Home</a>
-            </nav>
-        </header>
+	<body id="stars">
+		<!-- Upcoming Events Display -->
+		<div id="upcomingEventsContainer" style="color:white">
+			<div class="events-container"></div>
 
-        <!-- Text Animation Section -->
-        <section id="blinkingCursor">
-            <span id="text_header" class="text-white"></span>
-            <span id="cursor" class="text-white"></span>
-        </section>
+			<button id="next_button" class="text-white" style="display: none">
+					<a class="button_hover" href="countdown.html">>></a>
+			</button>
+		</div>
 
-        <!-- Next Page -->
-        <section class="next_page">
-            <button id="next_button" class="text-white">
-                <a class="button_hover" href="countdown.html">>></a>
-            </button>
-        </section>
+		<!-- Text Animation Section -->
+		<section id="blinkingCursor">
+			<span id="text_header" class="text-white"></span>
+			<span id="cursor" class="text-white"></span>
+		</section>
 
+		<!-- Countdown Panes -->
+		<section>
+			<div id="countdown_pane">
+				<div class="until_component">
+					<div class="until_date" id="days">--</div>
+					<div class="until">Days</div>
+				</div>
 
-        <footer id="footer_link" class="text-white">
-            Find me on:
-            <ul><a class="discord" href="https://discordapp.com/users/6889#3044">Discord (6889#3044)</a> </ul>
-            <ul><a class="instagram" href="https://instagram.com/goatyismeee/">Instagram</a></ul>
-        </footer>
-    </body>
+				<div class="until_component">
+					<div class="until_date" id="hours">--</div>
+					<div class="until">Hrs</div>
+				</div>
+
+				<div class="until_component">
+					<div class="until_date" id="minutes">--</div>
+					<div class="until">Mins</div>
+				</div>
+
+				<div class="until_component">
+					<div class="until_date" id="seconds">--</div>
+					<div class="until">Secs</div>
+				</div>
+
+				<div class="until_component">
+					<div class="until_date" id="secondsLeft">--</div>
+					<div class="until">Seconds Left</div>
+				</div>
+
+				<div class="until_event text-center fw-bold text-white"></div>
+			</div>
+		</section>
+
+		<div id="completionText"></div>
+		<section class="section_progress">
+			<div id="progressBar">
+				<div id="completionBar"></div>
+			</div>
+		</section>
+	</body>
 
 <!-- Scripts -->
-    <!-- JS animation script -->
-    <script src="./Javascript/nameAnimation.js"></script>
+	<!-- JS animation script -->
+	<!-- <script src="./Javascript/nameAnimation.js"></script> -->
+	<script src="./Javascript/eventTracker.js"></script>
+	<script src="./Javascript/backgroundAnimation.js"></script>
 </html>
 
