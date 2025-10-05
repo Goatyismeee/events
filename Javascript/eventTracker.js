@@ -15,6 +15,7 @@ const upcomingEvents = [
 
 const pastEvents = [];
 let currentEvent = null;
+let currentPage = 0;
 
 displayUpcomingEvents();
 runClock();
@@ -60,11 +61,16 @@ function getEventProgress(event) {
 }
 
 function displayUpcomingEvents() {
-  const container = document.getElementById("upcomingEventsContainer");
+  updateEvents();
+  const container = document.getElementById("eventList");
   const pageButton = document.getElementById("next_button");
-  const eventsToShow = upcomingEvents.slice(0,5);
-  console.log(upcomingEvents.length)
 
+  
+  const eventsPerPage = 5;
+  const startIndex = currentPage * eventsPerPage;
+  const endIndex = startIndex + eventsPerPage;
+  const eventsToShow = upcomingEvents.slice(startIndex, endIndex);
+  
   if (upcomingEvents.length > 5) {
     pageButton.style.display = "block";
   }
@@ -91,6 +97,18 @@ function displayUpcomingEvents() {
 
     container.appendChild(div);
   });
+
+  // Handle next button visibility
+  if (endIndex < upcomingEvents.length) {
+    pageButton.style.display = "block";
+    pageButton.onclick = () => {
+      console.log("ok")
+      currentPage++;
+      displayUpcomingEvents();
+    };
+  } else {
+    pageButton.style.display = "none"; // hide if no more pages
+  }
 }
 
 function setNextEvent(event) {
@@ -137,6 +155,6 @@ function runClock() {
 
   // show which event we’re counting down to
   // document.getElementById("h1").textContent = "";
-    // "Next Event: " + nextEvent.name + " (" + nextEvent.time + ")";
+  //   "Next Event: " + nextEvent.name + " (" + nextEvent.time + ")";
 }
 

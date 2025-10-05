@@ -59,3 +59,9 @@ h1 {
     justify-content: center;
     color: white;
 }
+
+@media (max-width: 600px) {
+	#progressBar {
+		width: 90%;
+	}
+}
