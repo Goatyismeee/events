@@ -1,7 +1,7 @@
 const upcomingEvents = [
   {name:"Bookout #6", start_time:"2025-09-28T00:00:00", end_time:"2025-10-03T18:00:00"},
   {name:"Bookout #7", start_time:"2025-10-05T00:00:00", end_time:"2025-10-10T18:00:00"},
-  {name:"Bookout #8", start_time:"2025-10-12T00:00:00", end_time:"2025-10-17T18:00:00"},
+  {name:"Bookout #8", start_time:"2025-10-12T00:00:00", end_time:"2025-10-18T12:00:00"},
   {name:"Bookout #9", start_time:"2025-10-19T00:00:00", end_time:"2025-10-24T18:00:00"},
   {name:"Bookout #10", start_time:"2025-10-26T00:00:00", end_time:"2025-10-31T18:00:00"},
   {name:"Bookout #11", start_time:"2025-11-02T00:00:00", end_time:"2025-11-07T18:00:00"},
