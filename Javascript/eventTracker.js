@@ -1,25 +1,26 @@
-const upcomingEvents = [
-  {name:"Bookout #6", start_time:"2025-09-28T00:00:00", end_time:"2025-10-03T18:00:00"},
-  {name:"Bookout #7", start_time:"2025-10-05T00:00:00", end_time:"2025-10-10T18:00:00"},
-  {name:"Bookout #8", start_time:"2025-10-12T00:00:00", end_time:"2025-10-17T18:00:00"},
-  {name:"Bookout #9", start_time:"2025-10-19T00:00:00", end_time:"2025-10-24T18:00:00"},
-  {name:"Bookout #10", start_time:"2025-10-26T00:00:00", end_time:"2025-10-31T18:00:00"},
-  {name:"Bookout #11", start_time:"2025-11-02T00:00:00", end_time:"2025-11-07T18:00:00"},
-  {name:"Bookout #12", start_time:"2025-11-09T00:00:00", end_time:"2025-11-14T18:00:00"},
-  {name:"Bookout #13", start_time:"2025-11-16T00:00:00", end_time:"2025-11-21T18:00:00"},
-  {name:"Bookout #14", start_time:"2025-11-23T00:00:00", end_time:"2025-11-28T18:00:00"},
-  {name:"Bookout #15", start_time:"2025-11-30T00:00:00", end_time:"2025-12-05T18:00:00"},
-  {name:"POP Graduation", start_time:"2025-08-12T08:00:00", end_time:"2025-12-06T00:00:00"},
-  {name:"ORD", start_time:"2025-08-12T08:00:00", end_time:"2027-08-11T18:00:00"},
-];
+// const upcomingEvents = [
+//   {name:"Bookout #6", start_time:"2025-09-28T00:00:00", end_time:"2025-10-03T18:00:00"},
+//   {name:"Bookout #7", start_time:"2025-10-05T00:00:00", end_time:"2025-10-10T18:00:00"},
+//   {name:"Bookout #8", start_time:"2025-10-12T00:00:00", end_time:"2025-10-17T18:00:00"},
+//   {name:"Bookout #9", start_time:"2025-10-19T00:00:00", end_time:"2025-10-24T18:00:00"},
+//   {name:"Bookout #10", start_time:"2025-10-26T00:00:00", end_time:"2025-10-31T18:00:00"},
+//   {name:"Bookout #11", start_time:"2025-11-02T00:00:00", end_time:"2025-11-07T18:00:00"},
+//   {name:"Bookout #12", start_time:"2025-11-09T00:00:00", end_time:"2025-11-14T18:00:00"},
+//   {name:"Bookout #13", start_time:"2025-11-16T00:00:00", end_time:"2025-11-21T18:00:00"},
+//   {name:"Bookout #14", start_time:"2025-11-23T00:00:00", end_time:"2025-11-28T18:00:00"},
+//   {name:"Bookout #15", start_time:"2025-11-30T00:00:00", end_time:"2025-12-05T18:00:00"},
+//   {name:"POP Graduation", start_time:"2025-08-12T08:00:00", end_time:"2025-12-06T00:00:00"},
+//   {name:"ORD", start_time:"2025-08-12T08:00:00", end_time:"2027-08-11T18:00:00"},
+// ];
 
-const pastEvents = [];
+let upcomingEvents = [];
+let pastEvents = [];
 let currentEvent = null;
 let currentPage = 0;
 
-displayUpcomingEvents();
-runClock();
-setInterval("runClock()", 1000);
+// displayUpcomingEvents();
+// runClock();
+// setInterval("runClock()", 1000);
 
 function getNextEvent() {
   const now = new Date();
@@ -46,6 +47,7 @@ function updateEvents() {
       upcomingEvents.splice(i, 1); // remove from upcoming
     }
   }
+  console.log(pastEvents);
 }
 
 function getEventProgress(event) {
@@ -61,7 +63,7 @@ function getEventProgress(event) {
 }
 
 function displayUpcomingEvents() {
-  updateEvents();
+  updateEvents(); //Moves expired events into pastEvents array
   const container = document.getElementById("eventList");
   const pageButton = document.getElementById("next_button");
 
@@ -158,3 +160,17 @@ function runClock() {
   //   "Next Event: " + nextEvent.name + " (" + nextEvent.time + ")";
 }
 
+fetch('./events.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Failed to load events.json");
+    }
+    return response.json();
+  })
+  .then(data => {
+    upcomingEvents = data.upcoming || [];
+    displayUpcomingEvents();
+    runClock();
+    setInterval(runClock, 1000);
+  })
+  .catch(error => console.error("Error loading events:", error));
