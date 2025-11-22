@@ -32,10 +32,30 @@
 #blinkingCursor {
 	display: flex;
 	justify-content: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 /* Nav Link */
 .home {
 	color: lime;
+}
+
+#upcomingEvents, #pastEvents {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 5px;
+	scrollbar-width: none;
+}
+
+#settingsOverlay {
+	display: none;
+	flex-direction: column;
+	background: rgb(52, 51, 51);
+	border-radius: 2%;
+	position: fixed;
+	justify-self: center;
+	width: 50vw;
+	height: 75vh;
+	z-index: 999;
+	padding-bottom: 10%;
 }

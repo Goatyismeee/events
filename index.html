@@ -8,17 +8,32 @@
 		<link href="./CSS/style_index.css" rel="stylesheet" />
 		<link href="./CSS/style_reset.css" rel="stylesheet" />
 		<link href="./CSS/style_countdown.css" rel="stylesheet"/>
-
-		<!-- Tailwind CSS -->
-		<link href="./dist/output.css" rel="stylesheet">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
 	<body id="stars">
+		<!-- User Settings Menu -->
+		<!-- <div id="settings" style="position: fixed; top: 0; right: 0;"></div>
+		<div id="settingsOverlay">
+
+
+			<button class="global_button" style="align-self: center; position: absolute; bottom: 0;">
+				<a id="clearLocalStorage">Reset to Default</a>
+			</button>
+		</div> -->
+
 		<!-- Upcoming Events Display -->
-		<div id="upcomingEventsContainer" style="color:white">
-			<div id="eventList"></div>
+		<div id="EventsContainer" style="display: flex; justify-content: space-evenly; color: white; margin-top: 5%;">
+
+			<span style="width: auto">
+				<h1 class="eventHeader" style="display:none; justify-self:center;">UPCOMING EVENTS</h1>
+				<div id="upcomingEvents" style="padding-right: 15px; box-shadow: rgb(60, 60, 60) 3px 3px 6px 0px inset, rgba(60, 60, 60, 0.1) -3px -3px 6px 1px inset; border-radius: 4%;"></div>
+			</span>
+
+			<span style="width: auto">
+				<h1 class="eventHeader" style="display: none; justify-self:center;">PAST EVENTS</h1>
+				<div id="pastEvents" style="padding-right: 15px; box-shadow: rgb(60, 60, 60) 3px 3px 6px 0px inset, rgba(60, 60, 60, 0.1) -3px -3px 6px 1px inset; border-radius: 4%;"></div>
+			</span>
 
 			<button id="next_button" class="text-white" style="display: none; align-self: center;">
 				<a class="button_hover">>></a>
@@ -30,7 +45,7 @@
 		<!-- Text Animation Section -->
 		<section id="blinkingCursor">
 			<span id="text_header" class="text-white"></span>
-			<span id="cursor" class="text-white"></span>
+			<!-- <span id="cursor" class="text-white"></span> -->
 		</section>
 
 		<!-- Countdown Panes -->
@@ -76,7 +91,8 @@
 <!-- Scripts -->
 	<!-- JS animation script -->
 	<!-- <script src="./Javascript/nameAnimation.js"></script> -->
-	<script src="./Javascript/eventTracker.js"></script>
-	<script src="./Javascript/backgroundAnimation.js"></script>
+	<script src="./js/eventTracker.js"></script>
+	<script src="./js/ui/backgroundAnimation.js"></script>
+	<!-- <script src="./js/storage/userSettings.js"></script> -->
 </html>
 

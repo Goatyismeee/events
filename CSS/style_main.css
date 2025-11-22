@@ -62,17 +62,17 @@ hover-underline-animation {
 	padding-top: 2%;
 }
 
-#next_button {
+.global_button {
 	height: 5%;
-	width: 12%;
+	width: 25%;
 	border-radius: 5%;
 	background-color: #5126D2;
 	box-shadow: 3px 3px #3203be;
 	transition: width 0.5s;
 }
 
-#next_button:hover {
-	width: 6%;
+.global_button:hover {
+	width: 20%;
 }
 
 #upcomingEventsContainer {
